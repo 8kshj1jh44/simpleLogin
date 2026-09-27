@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Light is the default (readable in direct sun); dark follows the phone's setting. */
+:root {
+  --canvas: #ececef;
+  --surface: #ffffff;
+  --raised: #e4e4e7;
+  --line: #d4d4d8;
+  --ink: #0b0d10;
+  --muted: #52525b;
+  --faint: #65656e;
+  --accent: #facc15;
+  --accent-edge: #ca8a04;
+  --on-accent: #0b0d10;
+  --profit: #166534;
+  --loss: #b91c1c;
+  --profit-tint: #e7f4ec;
+  --loss-tint: #fbeaea;
+  --spent: #c4c4cc;
+  --focus: #0b0d10;
+  --scrim: rgb(11 13 16 / 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0b0d10;
+    --surface: #131619;
+    --raised: #1b1f24;
+    --line: #262a31;
+    --ink: #f4f4f5;
+    --muted: #a1a1aa;
+    --faint: #8e8e98;
+    --accent: #facc15;
+    --accent-edge: #facc15;
+    --on-accent: #0b0d10;
+    --profit: #22c55e;
+    --loss: #ef4444;
+    --profit-tint: rgb(34 197 94 / 0.12);
+    --loss-tint: rgb(239 68 68 / 0.12);
+    --spent: #3a3f47;
+    --focus: #facc15;
+    --scrim: rgb(0 0 0 / 0.6);
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-edge: var(--accent-edge);
+  --color-on-accent: var(--on-accent);
+  --color-profit: var(--profit);
+  --color-loss: var(--loss);
+  --color-profit-tint: var(--profit-tint);
+  --color-loss-tint: var(--loss-tint);
+  --color-spent: var(--spent);
+  --color-scrim: var(--scrim);
+  /* One radius for every box: cards, inputs, buttons, sheets, toasts. */
+  --radius-box: 14px;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background-color: var(--canvas);
+  color-scheme: light dark;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--canvas);
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+input:focus-visible {
+  outline: none;
+}
