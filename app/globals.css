@@ -85,3 +85,14 @@ body {
 input:focus-visible {
   outline: none;
 }
+
+/* Paint over the browser's autofill tint; --field-bg is set per tone on the Field wrapper. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--field-bg, var(--canvas)) inset;
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  font-size: inherit;
+  transition: background-color 9999s;
+}

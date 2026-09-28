@@ -16,6 +16,7 @@ export function LoginForm() {
       <form action={signInAction} className="space-y-4">
         <Field
           label="Email"
+          tone="surface"
           name="email"
           type="email"
           inputMode="email"
@@ -28,6 +29,7 @@ export function LoginForm() {
         />
         <Field
           label="Password"
+          tone="surface"
           name="password"
           type="password"
           autoComplete="current-password"
@@ -53,6 +55,7 @@ export function LoginForm() {
           {startingDemo ? "Opening demo…" : "Try the demo"}
         </Button>
       </form>
+      <p className="mt-3 text-center text-sm text-muted">No sign-up. See a real month in seconds.</p>
     </div>
   );
 }

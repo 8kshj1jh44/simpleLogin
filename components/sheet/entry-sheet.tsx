@@ -122,6 +122,7 @@ function EntryForm({ type, customers, onSubmit }: EntryFormProps) {
               inputs.current[field.name] = node;
             }}
             label={field.label}
+            tone="sunken"
             placeholder={field.placeholder}
             value={values[field.name]}
             onChange={(event) => update(field.name, event.target.value)}
